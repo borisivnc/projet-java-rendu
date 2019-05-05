@@ -22,7 +22,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
         students = new ArrayList<>();
     }
 
-    public void loadFromCsv(String filename) throws FileNotFoundException {
+     public void loadFromCsv(String filename) throws FileNotFoundException {
 
         Scanner scanner = new Scanner(new File(filename));
         Scanner dataScanner = null;
@@ -37,20 +37,21 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
 
         boolean check;
 
-        while (scanner.hasNextLine()) {
+        while (scanner.hasNextLine()) { 
 
             dataScanner = new Scanner(scanner.nextLine());
             dataScanner.useDelimiter(",");
             Date date = new Date();
 
             check = true;
-
+           // On parcourt toutes les données d'une ligne
             while (dataScanner.hasNext()) {
                 String data = dataScanner.next();
 
+                // On récupère l'id, le prénom, le nom, la date dans l'ordre respectif
                 if (index == 0) {
 
-                    id = Integer.parseInt(data);
+                    id = Integer.parseInt(data); 
 
                 } else if (index == 1) {
                     name = data;
@@ -73,6 +74,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
                         check = false;
                     }
 
+
                 } else
                     System.out.println("invalid data::" + data);
 
@@ -81,7 +83,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
             }
 
             if(check) {
-
+                // on ajoute cet étudiant avec le data correspondant 
                 Student s = new Student(surname, name, date, this.name);
                 students.add(s);
             }
@@ -220,9 +222,9 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
         {
             float medianIndex = Math.round((float)gradeList.size() / 2) - 1;
 
-            return ( (gradeList.size() % 2 == 0)
-                    ? (gradeList.get((int)medianIndex) + gradeList.get((int)medianIndex + 1)) / 2
-                    : gradeList.get(gradeList.size() / 2));
+            return ( (gradeList.size() % 2 == 0) // Si pair
+                    ? (gradeList.get((int)medianIndex) + gradeList.get((int)medianIndex + 1)) / 2 // alors on fait la moyenne des milieux
+                    : gradeList.get(gradeList.size() / 2)); // Sinon on retourne le milieu
         }
 
         return gradeList.get(0);
@@ -230,7 +232,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
     }
 
 
-    public float getMinValue( String subject){
+    public float getMinValue(String subject){
 
         ArrayList<Float> gradeList = new ArrayList<>();
 
@@ -244,14 +246,14 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
         if(gradeList.isEmpty())
             return 0;
 
-        Collections.sort(gradeList);
+        Collections.sort(gradeList); // on tri par ordre croissant la liste de note 
 
-        return gradeList.get(0);
+        return gradeList.get(0); // On retourne donc la premiere valeur
 
     }
 
 
-    public float getMaxValue( String subject){
+    public float getMaxValue(String subject){
 
         ArrayList<Float> gradeList = new ArrayList<>();
 
@@ -265,9 +267,9 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
         if(gradeList.isEmpty())
             return 0;
 
-        Collections.sort(gradeList,Collections.reverseOrder());
+        Collections.sort(gradeList,Collections.reverseOrder()); // On tri dans l'ordre décroissant
 
-        return gradeList.get(0);
+        return gradeList.get(0); // On retourne la premiere valeur
 
     }
 
