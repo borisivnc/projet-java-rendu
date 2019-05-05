@@ -43,8 +43,8 @@ public class Student extends Person {
 
     public void addGrade(String subject, float grade, Teacher teacherGrading) {
 
-        exams.add(new Exam(subject, this, teacherGrading, grade));
-        exams.sort((o1, o2) -> Float.compare(o1.getGrade(), o2.getGrade()));
+        exams.add(new Exam(subject, this, teacherGrading, grade)); // on ajoute un examen
+        exams.sort((o1, o2) -> Float.compare(o1.getGrade(), o2.getGrade())); // on compare les exams pour les trier
 
         float gradeSum = 0;
 
@@ -52,9 +52,9 @@ public class Student extends Person {
         {
             float medianIndex = Math.round((float)exams.size() / 2) - 1;
 
-            medianGrade = ( (exams.size() % 2 == 0)
-                    ? (exams.get((int)medianIndex).getGrade() + exams.get((int)medianIndex + 1).getGrade()) / 2
-                    : exams.get(exams.size() / 2).getGrade());
+            medianGrade = ( (exams.size() % 2 == 0) // Si pair
+                    ? (exams.get((int)medianIndex).getGrade() + exams.get((int)medianIndex + 1).getGrade()) / 2 // alors on fait la moyenne des 2 notes au milieu
+                    : exams.get(exams.size() / 2).getGrade()); // sinon on prend juste la note du milieu
         }
 
         else
