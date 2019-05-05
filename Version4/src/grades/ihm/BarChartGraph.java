@@ -40,6 +40,7 @@ public class BarChartGraph extends ApplicationFrame {
         final DefaultCategoryDataset dataset =
                 new DefaultCategoryDataset( );
 
+        // On prend comme valeur pour le graphique la moyenne génerale de chaque élève et leur prénom en abscisses
         dataset.setValue(students.get(0).getAverageGrade(),"Moyenne Generale", students.get(0).getName());
         dataset.setValue(students.get(1).getAverageGrade(),"Moyenne Generale",students.get(1).getName());
         dataset.setValue(students.get(2).getAverageGrade(),"Moyenne Generale",students.get(2).getName());
