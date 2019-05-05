@@ -28,7 +28,8 @@ public class App extends JFrame implements ActionListener, WindowListener {
     private JPanel cards;
 
     private JTabbedPane tabbedPane;
-
+    
+    // On crée 4 panel
     private final static String STUDENTS_PANEL  = "Gestion des élèves";
     private final static String TEACHERS_PANEL  = "Gestion des professeurs";
     private final static String GRADES_PANEL    = "Gestion des notes";
@@ -87,6 +88,7 @@ public class App extends JFrame implements ActionListener, WindowListener {
             e.printStackTrace();
         }
 
+        // On crée des professeurs qui ensuite ajoute des notes aux élèves de la liste
         Teacher a = new Teacher("Pascal","Marivaux");
         Teacher b = new Teacher("Helene","Zaric");
         Teacher c = new Teacher("Fabien","Silva");
@@ -195,10 +197,12 @@ public class App extends JFrame implements ActionListener, WindowListener {
 
         JPanel form = new JPanel(new BorderLayout());
 
+        // On ajoute des champs de texte pour le prenom, nom et la date
         studentNameTextField = new JTextField(20);
         studentSurnameTextField = new JTextField(20);
         dateTextField = new JTextField(20);
 
+        // On crée le bouton Ajouter et Supprimer la ligne
         addStudentButton = new JButton("Ajouter");
         addStudentButton.addActionListener(this);
 
@@ -210,7 +214,8 @@ public class App extends JFrame implements ActionListener, WindowListener {
         textFieldsPanel.add(studentSurnameTextField);
         textFieldsPanel.add(studentNameTextField);
         textFieldsPanel.add(dateTextField);
-
+        
+        // On ajoute ce qu'on a crée dans le panel, on fait de même pour les professeurs, les notes et le graphes
         form.add(textFieldsPanel, BorderLayout.CENTER);
         form.add(addStudentButton, BorderLayout.PAGE_END);
 
@@ -332,7 +337,8 @@ public class App extends JFrame implements ActionListener, WindowListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+    
+        // On voit ici les actions émise lors du clique sur les boutons
         Object source = e.getSource();
 
         if(source == addStudentButton) {
