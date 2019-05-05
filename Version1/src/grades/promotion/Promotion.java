@@ -33,21 +33,22 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
 
     public Student searchStudentWithID(int ID) {
 
+        // On parcourt les étudiant 
         for(Student s : this) {
 
-            if(s.getID() == ID)
-                return s;
+            if(s.getID() == ID) // si l'ID de l'étudiant correspond à l'ID recherché
+                return s;    // On retourne cet étudiant
         }
 
-        return null;
+        return null;  // Sinon on retourne null
     }
 
     public void sortByAverageGrade(boolean ascendingOrder) {
-        if(ascendingOrder) students.sort(StudentComparator.AVERAGE_GRADE_ASCENDING_ORDER);
-        else students.sort(StudentComparator.AVERAGE_GRADE_DESCENDING_ORDER);
+        if(ascendingOrder) students.sort(StudentComparator.AVERAGE_GRADE_ASCENDING_ORDER); // On tri en ordre croissant les étudiants en fonction de leur moyenne
+        else students.sort(StudentComparator.AVERAGE_GRADE_DESCENDING_ORDER); // sinon on tri en ordre décroissant les étudiants 
     }
 
-    public void sortByMedianGrade(boolean ascendingOrder) {
+    public void sortByMedianGrade(boolean ascendingOrder) { // Ici on tri les étudiant on fontion de leur médiane
         if(ascendingOrder) students.sort(StudentComparator.MEDIAN_GRADE_ASCENDING_ORDER);
         else students.sort(StudentComparator.MEDIAN_GRADE_DESCENDING_ORDER);
     }
