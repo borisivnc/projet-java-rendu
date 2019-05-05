@@ -39,7 +39,7 @@ public class Student extends Person {
     }
 
 
-    public void addGrade(String subject, float grade, Teacher teacherGrading) {
+     public void addGrade(String subject, float grade, Teacher teacherGrading) {
 
         exams.add(new Exam(subject, this, teacherGrading, grade)); // on ajoute un examen
         exams.sort((o1, o2) -> Float.compare(o1.getGrade(), o2.getGrade())); // on compare les exams pour les trier
