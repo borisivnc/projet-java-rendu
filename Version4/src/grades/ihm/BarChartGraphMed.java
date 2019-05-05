@@ -40,6 +40,7 @@ public class BarChartGraphMed extends JFrame {
         final DefaultCategoryDataset dataset =
                 new DefaultCategoryDataset( );
 
+        // On prends pour le graphes la mediane generale en ordonnées et le prenom en abscisses
         dataset.setValue(students.get(0).getMedianGrade(),"Mediane Generale", students.get(0).getName());
         dataset.setValue(students.get(1).getMedianGrade(),"Mediane Generale",students.get(1).getName());
         dataset.setValue(students.get(2).getMedianGrade(),"Mediane Generale",students.get(2).getName());
