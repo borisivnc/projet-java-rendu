@@ -25,16 +25,16 @@ public class Teacher extends Person  {
 
     public void setNote(Promotion promotion, int ID, float newGrade ,int i) throws IllegalStateException {
 
-        Student s = searchStudentWithID(promotion, ID);
+        Student s = searchStudentWithID(promotion, ID); // on cherche en premier si l'étudiant existe
 
-        if(s == null )
-            throw new IllegalStateException("The student does not exist");
+        if(s == null ) // Si on trouve pas l'étudiant
+            throw new IllegalStateException("The student does not exist"); // On previens l'utilisateur 
 
-        else if(exams.size() > i )
-            exams.get(i).setGrade(newGrade);
+        else if(exams.size() > i ) // si l'examen est déjà présent dans la liste 
+            exams.get(i).setGrade(newGrade); // On ajoute juste la nouvelle note newGrade
 
         else
-            exams.add(new Exam("", s, this, newGrade));
+            exams.add(new Exam("", s, this, newGrade)); // sinon on crée l'examen en y mettant la note egalement
 
     }
 
