@@ -16,21 +16,22 @@ public class Main {
     public static void main(String[] args) {
 
         Promotion p = new Promotion("");
-
+        
+        // On crée des étudiants
         Student maria = new Student("Maria","Graus Rafael", new Date(28,7,1998),"L3 2021");
         Student boris = new Student("Boris","Ivanovic",new Date(20,1,1998),"L3 2021");
         Student jb = new Student("Jean-Baptiste","Granet",new Date(27,3,1998),"L3 2021");
         Student laura = new Student("Laura","Trus",new Date(2,4,1998),"L3 2021");
         Student tristan = new Student("Tristan","Sar",new Date(11,11,1998),"L3 2021");
-        Student mamadou = new Student("Mamadou","Dupont",new Date(25,9,1998),"L3 2021");
+        Student mamadou = new Student("Francois","Dupont",new Date(25,9,1998),"L3 2021");
 
-
+        // On crée des professeurs
         Teacher a = new Teacher("Pascal","Marivaux");
         Teacher b = new Teacher("Helene","Zaric");
         Teacher c = new Teacher("Fabien","Silva");
         Teacher d = new Teacher("Walter","White");
 
-
+        // on ajoute les étudiants à la promotion
         p.add(maria);
         p.add(boris);
         p.add(jb);
@@ -38,33 +39,34 @@ public class Main {
         p.add(tristan);
         p.add(mamadou);
 
+        // Les professeurs ajoutent des notes aux étudiants
         a.addGrade("Math",17 ,maria);
         a.addGrade("Math",10 ,boris);
         a.addGrade("Math",9 ,jb);
         a.addGrade("Math",2 ,laura);
         a.addGrade("Math",15 ,tristan);
-        a.addGrade("Math",11 ,mamadou);
+        a.addGrade("Math",11 ,Francois);
 
         b.addGrade("English",13 ,maria);
         b.addGrade("English",15 ,boris);
         b.addGrade("English",13 ,jb);
         b.addGrade("English",10 ,laura);
         b.addGrade("English",15 ,tristan);
-        b.addGrade("English",07 ,mamadou);
+        b.addGrade("English",07 ,Francois);
 
         c.addGrade("IT", 13.5f,maria);
         c.addGrade("IT",19 ,boris);
         c.addGrade("IT",15 ,jb);
         c.addGrade("IT",12 ,laura);
         c.addGrade("IT",15 ,tristan);
-        c.addGrade("IT",14 ,mamadou);
+        c.addGrade("IT",14 ,Francois);
 
         d.addGrade("Chemistry",17 ,maria);
         d.addGrade("Chemistry",15.5f ,boris);
         d.addGrade("Chemistry",15 ,jb);
         d.addGrade("Chemistry",10 ,laura);
         d.addGrade("Chemistry",15 ,tristan);
-        d.addGrade("Chemistry",07 ,mamadou);
+        d.addGrade("Chemistry",07 ,Francois);
 
         System.out.println("-------------- Affichage d'un eleve --------------\n");
 
