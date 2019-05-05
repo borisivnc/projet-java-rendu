@@ -37,20 +37,21 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
 
         boolean check;
 
-        while (scanner.hasNextLine()) {
+        while (scanner.hasNextLine()) { 
 
             dataScanner = new Scanner(scanner.nextLine());
             dataScanner.useDelimiter(",");
             Date date = new Date();
 
             check = true;
-
+           // On parcourt toutes les données d'une ligne
             while (dataScanner.hasNext()) {
                 String data = dataScanner.next();
 
+                // On récupère l'id, le prénom, le nom, la date dans l'ordre respectif
                 if (index == 0) {
 
-                    id = Integer.parseInt(data);
+                    id = Integer.parseInt(data); 
 
                 } else if (index == 1) {
                     name = data;
@@ -82,7 +83,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
             }
 
             if(check) {
-
+                // on ajoute cet étudiant avec le data correspondant 
                 Student s = new Student(surname, name, date, this.name);
                 students.add(s);
             }
@@ -97,7 +98,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
     public void saveAsCsv(String fileName) throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-
+        // on sauvegarde chaque ligne dans un nouveau fichier csv
         for(Student s : this) {
 
             writer.write(s.getID() + "," +  s.getName() + "," + s.getSurname() + "," + s.getBirthDate() + "," + name + "\n");
