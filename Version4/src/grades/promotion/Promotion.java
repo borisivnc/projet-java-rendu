@@ -47,7 +47,8 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
 
             while (dataScanner.hasNext()) {
                 String data = dataScanner.next();
-
+    
+                // Prend l'id, le prénom, le nom, la date par ordre respectif sur le fichier 
                 if (index == 0) {
 
                     id = Integer.parseInt(data);
@@ -81,7 +82,8 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
             }
 
             if(check) {
-
+                
+                // crée un etudiant avec ces informations
                 Student s = new Student(name, surname, date, this.name);
                 students.add(s);
             }
