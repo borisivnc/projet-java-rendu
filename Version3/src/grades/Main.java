@@ -16,7 +16,7 @@ public class Main {
 
 
         Promotion p = new Promotion();
-
+        // On prend les étudiants de la liste csv
         try {
 
             p.loadFromCsv("StudentList.csv");
@@ -24,11 +24,13 @@ public class Main {
             e.printStackTrace();
         }
 
+        // On ajoute des professeurs
         Teacher a = new Teacher("Pascal","Marivaux");
         Teacher b = new Teacher("Helene","Zaric");
         Teacher c = new Teacher("Fabien","Silva");
         Teacher d = new Teacher("Walter","White");
 
+        // Les professeurs donnent des notes
         a.addGrade("Math",17 , p.getStudent(0) );
         a.addGrade("Math",10 ,p.getStudent(1));
         a.addGrade("Math",9 ,p.getStudent(2));
@@ -86,6 +88,7 @@ public class Main {
         d.addGrade("Chemistry",12 ,p.getStudent(4));
         d.addGrade("Chemistry",14 ,p.getStudent(5));
 
+        // Pour chaque étudiants on affiche leur bulletin
 
         for(Student s : p){
 
@@ -108,6 +111,8 @@ public class Main {
 
         }
 
+        // On crée les deux graphiques qui affiche la moyenne generale de chaque éléves et la mediane également
+        
         BarChartGraph chart = new BarChartGraph("Graphique Moyenne Générale","Moyennes des élèves dans une promotion",p);
         chart.pack();
         RefineryUtilities.centerFrameOnScreen(chart);
