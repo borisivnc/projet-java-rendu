@@ -43,7 +43,7 @@ public class Student extends Person {
 
     public void addGrade(String subject, float grade, Teacher teacherGrading) {
 
-        exams.add(new Exam(subject, this, teacherGrading, grade));
+        exams.add(new Exam(subject, this, teacherGrading, grade)); // On crée un nouvel examen en ajoutant les informations passés en parametre
         exams.sort((o1, o2) -> Float.compare(o1.getGrade(), o2.getGrade()));
 
         float gradeSum = 0;
@@ -52,9 +52,9 @@ public class Student extends Person {
         {
             float medianIndex = Math.round((float)exams.size() / 2) - 1;
 
-            medianGrade = ( (exams.size() % 2 == 0)
-                    ? (exams.get((int)medianIndex).getGrade() + exams.get((int)medianIndex + 1).getGrade()) / 2
-                    : exams.get(exams.size() / 2).getGrade());
+            medianGrade = ( (exams.size() % 2 == 0) // si pair
+                    ? (exams.get((int)medianIndex).getGrade() + exams.get((int)medianIndex + 1).getGrade()) / 2 // Alors on prend les milieu et on fait leur moyennne des 2 
+                    : exams.get(exams.size() / 2).getGrade());// Sinon on retourne juste le milieu
         }
 
         else
@@ -68,7 +68,7 @@ public class Student extends Person {
             gradeSum += e.getGrade();
         }
 
-        averageGrade = (float)gradeSum / exams.size();
+        averageGrade = (float)gradeSum / exams.size(); // Pour la moyenne on fait l'ensemble des notes divisé par le nombre des examens
     }
 
     public int getID() {
