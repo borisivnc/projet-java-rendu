@@ -42,7 +42,7 @@ public class Teacher extends Person  {
 
     }
 
-    public static ArrayList<Teacher> loadFromCsv(String filename) throws FileNotFoundException {
+    public static ArrayList<Teacher> loadFromCsv(String filename) throws FileNotFoundException { // La même fonction qu'on utilise pour prendre les données d'un fichier des étudiants, on le fait ici pour prendre les prenom et nom des professeurs 
 
         ArrayList<Teacher> teacherList = new ArrayList<>();
 
