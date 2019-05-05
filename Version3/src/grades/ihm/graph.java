@@ -35,7 +35,7 @@ public class graph extends JFrame {
 
         final DefaultCategoryDataset dataset =
                 new DefaultCategoryDataset( );
-
+        // On crée une chart avec la mediane générale de chaque élèves pour l'axe des ordonnées et leur prénom pour l'axe des abscisses 
         dataset.setValue(p.getStudent(0).getMedianGrade(),"Mediane Generale", p.getStudent(0).getName());
         dataset.setValue(p.getStudent(1).getMedianGrade(),"Mediane Generale",p.getStudent(1).getName());
         dataset.setValue(p.getStudent(2).getMedianGrade(),"Mediane Generale",p.getStudent(2).getName());
