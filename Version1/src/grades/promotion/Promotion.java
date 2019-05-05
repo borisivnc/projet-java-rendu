@@ -33,7 +33,7 @@ public class Promotion implements Iterable<Student>, Collection<Student>, Studen
 
     public Student searchStudentWithID(int ID) {
 
-        // On parcourt les étudiant 
+        // On parcourt les étudiants 
         for(Student s : this) {
 
             if(s.getID() == ID) // si l'ID de l'étudiant correspond à l'ID recherché
